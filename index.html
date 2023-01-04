@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding:0;
+			overflow: hidden;
+		}
+		canvas {
+			position: absolute;
+			overflow: hidden;
+			background-size: 32em;
+			image-rendering: pixelated;
+		}
+		.scene {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+		}
+		.world-map {
+			position: absolute;
+			z-index: -999999999999999999999999999999;
+		}
+		.entity {
+			position: absolute;
+
+		}
+		.entity-body{
+			position: absolute;
+			border-top: solid rgba(64,64,64,0.25);
+			border-left: solid rgba(64,64,64,0.25);
+			border-bottom: solid rgba(64,64,64,0.25);
+			border-right: solid rgba(64,64,64,0.25);
+			border-width: var(--body-radius) calc(var(--body-radius)*3);
+			border-radius: 50%;
+			transform: translate(-50%,-50%);
+		}
+		.entity#client-this .character{
+			background-color: darkred;
+		}
+		.character{
+			position: absolute;
+			height: 4em;
+			width: 4em;
+			background-color: darkgreen;
+			transform: translate(-50%,-100%);
+		}
+		.character * {
+			z-index: inherit;
+		}
+		.led{
+			background-color: var(--led-color);
+			border-radius: 50%;
+			width: 1em;
+			height: 1em;
+			margin: auto;
+		}
+		.led.off{
+			background-color: black;
+		}
+		#tileset-image {
+			position: absolute;
+			left: -1000vw;
+		}
+	</style>
+</head>
+<body>
+	<div class="scene">
+		
+		<div class="entities">
+		</div>
+		<div class="entity" id="client-this">
+			<div class="entity-body">
+				<div class="character"></div>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="vector.js"></script>
+	<script type="text/javascript" src="sc.js"></script>
+</body>
+</html>
